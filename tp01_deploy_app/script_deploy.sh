@@ -17,8 +17,7 @@ group_test=$(az group exists --name $group_name)
 group_vnet="tp1arnaudvnet"
 group_subnet="tp1arnaudsubnet"
 vm_name="tp1arnaudvm"
-vm_test=$(az vm list -d -o table --query "[?name=='$vm_name']")
-vm_image="Debian"
+vm_image="UbuntuLTS"
 vm_root="azureuser"
 vm_type="Standard_DS1_v2"
 
@@ -36,28 +35,27 @@ az network vnet create \
     --address-prefix 10.80.0.0/16 \
     --subnet-name $group_subnet \
     --subnet-prefix 10.80.1.0/24
-sleep 180s
 fi
 
 
 
 #creation d'une VM windows linux avec nodeje et nginx
-if [$vm_test = $vm_name ] ; then
-    echo "$(date +'%Y-%m-%d %H:%M:%S') [ INFO  ] : La vm existe déjà ..."
-else
-    az vm create \
-        --resource-group $group_name \
-        --name $vm_name \
-        --image $vm_image \
-        --admin-username $vm_root \
-        --generate-ssh-keys \
-        --size $vm_type \
-        --custom-data cloud-init.txt
-fi
+az vm create \
+    --resource-group $group_name \
+    --name $vm_name \
+    --image $vm_image \
+    --admin-username $vm_root \
+    --generate-ssh-keys \
+    --size $vm_type \
+    --custom-data cloud-init.txt
 
-# #Ouverture port 80 vm
-# az vm open-port --port 80 --resource-group $group_name --name $vm_name
+#Ouverture port 80 vm
+echo "$(date +'%Y-%m-%d %H:%M:%S') [ INFO  ] : Ouverture du port 80 ..."
+az vm open-port --port 80 --resource-group $group_name --name $vm_name --priority 100
 
+#Lister les adresse ip de la machine
+echo "$(date +'%Y-%m-%d %H:%M:%S') [ INFO  ] : Adresses ip : "
+az vm list-ip-addresses -g $group_name -n $vm_name
 
 
 
