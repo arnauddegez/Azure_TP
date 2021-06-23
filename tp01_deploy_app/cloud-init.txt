@@ -2,9 +2,6 @@
 package_upgrade: true
 packages:
   - nginx
-  - nodejs
-  - npm
-  - git
 write_files:
   - owner: www-data:www-data
     path: /etc/nginx/sites-available/default
@@ -23,9 +20,11 @@ write_files:
       }
 
 runcmd:
-  - service nginx restart
-  - npm install -g pm2
+  - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  - sudo apt-get install -y nodejs
+  - sudo npm install -g pm2
   - cd "/home/azureuser"
-  - git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
-  - cd "~/nodejs-docs-hello-world"
+  - git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git myapp
+  - cd "~/myapp"
   - sudo pm2 start -f index.js
+  - sudo service nginx restart
