@@ -40,6 +40,7 @@ fi
 
 
 #creation d'une VM windows linux avec nodeje et nginx
+echo "$(date +'%Y-%m-%d %H:%M:%S') [ INFO  ] : Creation de la vm ..."
 az vm create \
     --resource-group $group_name \
     --name $vm_name \
