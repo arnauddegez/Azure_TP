@@ -24,11 +24,13 @@ if ( $vm_test -ne $true )
     az vm extension set --publisher Microsoft.Azure.Extensions --version 2.0 --name CustomScript --vm-name $vm_name --resource-group $group_name --settings 
     '{
         "commandToExecute": {
-            "apt-get -y update",
-            "apt-get -y install nginx nodejs git",
+            "curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -",
+            "sudo apt-get install -y nodejs",
+            "sudo npm install -g pm2",
+            "sudo apt-get install -y nginx",
+            "sudo pm2 start -f index.js",
             "mkdir /home/app/",
-            "git clone https://github.com/azure-devops/fabrikam-node.git > /home/app/",
-            "/usr/bin/bash /home/app/fabrikam-node/deployapp.sh"
+            "git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git > /home/app/",
         }
     }'
 
