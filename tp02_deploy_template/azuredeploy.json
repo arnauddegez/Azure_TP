@@ -104,17 +104,11 @@
         "description": "Specifies the SSH rsa public key file as a string. Use \"ssh-keygen -t rsa -b 2048\" to generate your SSH key pairs."
       }
     },
-    "_artifactsLocation": {
-      "type": "string",
-      "defaultValue": ""
+    "customData": {
+      "type": "string"
     }
   },
-  "variables": {
-    "customData": "[concat('#include\n',
-        uri(parameters('_artifactsLocation'),
-        concat('Cloud-Init.txt',
-           parameters('_artifactsLocationSasToken'))))]"
-  },
+  "variables": {},
   "resources": [
     {
       "type": "Microsoft.Network/networkSecurityGroups",
@@ -220,7 +214,7 @@
           "computerName": "[parameters('vmname')]",
           "adminUsername": "[parameters('adminusername')]",
           "adminPassword": "[parameters('adminpassword')]",
-          "customData": "[base64(variables('customData'))]",
+          "customData": "[base64(parameters('customData'))]",
           "linuxConfiguration": {
             "disablePasswordAuthentication": false,
             "provisionVMAgent": true,

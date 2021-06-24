@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "adminusername": {
+        "value": "azureuser"
+      },
+      "customData": {
+        "value": "echo customData"
+      },
+      "adminPublicKey": {
+        "value": "TP2-ARNAUD"
+      },
+      "adminpassword":{
+          "value": "Pa55w.rd1234"
+      }
+    }
+  }
