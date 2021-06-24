@@ -161,20 +161,6 @@
       }
     },
     {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2020-06-01",
-      "name": "[parameters('publicipname')]",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "Standard"
-      },
-      "properties": {
-        "publicIPAddressVersion": "IPv4",
-        "publicIPAllocationMethod": "Static",
-        "idleTimeoutInMinutes": 4
-      }
-    },
-    {
       "type": "Microsoft.Network/publicIPPrefixes",
       "apiVersion": "2020-06-01",
       "name": "[parameters('publicipprefixname')]",
