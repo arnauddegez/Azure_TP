@@ -12,7 +12,7 @@
         "value": "tp2-unique"
       },
       "adminPasswordOrKey": {
-        "value": "ARNAUD.pub"
+        "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWvpqo4h2kdizU3mr/jc+mFwryNUBE60wFotxFnPhcylEw3IxL39GLsXxCvTG8vsEgGyH/BD7y9c/SyVIB6W3W4ZOEz3k3iOI6lHyiyfkcM8ilKVZxFmne7M4nu/10XAzI+UVuYLEoA9hy2HjqeiovZ3vaqUpVoE42pWU3759s6LxCBnceTqKgXPjvpjCkLPcHmqAeZSM7Tebh1JI8OX8fk4KbxvhiTTcBhr5iFzzY67YOLpCWK5FaOEyCrNAnDfyUlxNTE6z468BYCg3V8OsGdRlF+ZsbBs5Q/RNQTJNwlTrNac9ob3fRsvay//YTjZ8zlqZwAuO7tFjDsrLWR2xP"
       }
     }
   }
