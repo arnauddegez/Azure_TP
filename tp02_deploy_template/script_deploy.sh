@@ -17,7 +17,7 @@ echo "$(date +'%Y-%m-%d %H:%M:%S') [ INFO  ] : Création du groupe de ressource 
 az group create \
 --name $group_name \
 --location $location
-
+fi
 #Deploiement de la vm + network (vnet,subnet,nat gateway, etc...)
 az deployment group create \
 --resource-group $group_name \
