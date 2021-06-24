@@ -11,8 +11,11 @@
       "adminPublicKey": {
         "value": "TP2-ARNAUD"
       },
-      "adminpassword":{
-          "value": "Pa55w.rd1234"
+      "dnsLabelPrefix": {
+        "value": "TP2-DNS-ARNAUD"
+      },
+      "adminPasswordOrKey": {
+        "value": "tp2arnaudpwd"
       }
     }
   }

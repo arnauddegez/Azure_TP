@@ -23,6 +23,6 @@ az deployment group create \
 --resource-group $group_name \
 --template-file  azuredeploy.json \
 --parameters azuredeployparameters.json \
-customData="`base64 -w 0 Cloud-Init`"
+customData="`base64 -w 0 Cloud-Init.txt`"
 
 
