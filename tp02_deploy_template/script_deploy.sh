@@ -5,7 +5,7 @@
 
 #Variables:
 group_name="tp2-arnaud-rg"
-location="eastus"
+location="westeurope"
 group_test=$(az group exists --name $group_name)
 
 

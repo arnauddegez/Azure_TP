@@ -9,10 +9,10 @@
         "value": "echo customData"
       },
       "dnsLabelPrefix": {
-        "value": "TP2-DNS-ARNAUD"
+        "value": "tp2-unique"
       },
       "adminPasswordOrKey": {
-        "value": "tp2arnaudpwd"
+        "value": "ARNAUD.pub"
       }
     }
   }
