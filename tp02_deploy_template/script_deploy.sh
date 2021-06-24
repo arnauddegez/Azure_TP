@@ -21,5 +21,8 @@ az group create \
 #Deploiement de la vm + network (vnet,subnet,nat gateway, etc...)
 az deployment group create \
 --resource-group $group_name \
---template-file  template_resource.json
+--template-file  azuredeploy.json \
+--parameters azuredeployparameters.json \
+customData="`base64 -w 0 cloud-init`"
+
 
